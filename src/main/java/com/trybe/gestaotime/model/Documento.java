@@ -1,11 +1,11 @@
 package com.trybe.gestaotime.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
@@ -24,8 +24,12 @@ public class Documento {
   private String numeroCateiraTrabalho;
   private String numeroCbf;
 
-  @JoinColumn(name = "jogador_id")
-  @OneToOne(fetch = FetchType.LAZY)
+  @OneToOne(
+      mappedBy = "documento",
+      cascade = CascadeType.ALL,
+      orphanRemoval = true,
+      fetch = FetchType.LAZY
+  )
   private Jogador jogador;
 
   public Jogador getJogador() {

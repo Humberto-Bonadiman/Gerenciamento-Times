@@ -1,8 +1,7 @@
 package com.trybe.gestaotime.model;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,7 +34,12 @@ public class Time {
   @JoinTable(name = "relacionamento_time_torcedor",
       joinColumns = {@JoinColumn(name = "time_id")},
       inverseJoinColumns = {@JoinColumn(name = "torcedor_id")})
-  private Set<Torcedor> torcedores;
+  private List<Torcedor> torcedores;
+
+  public Time() {
+    this.jogadores = new ArrayList<Jogador>();
+    this.torcedores = new ArrayList<Torcedor>();
+  }
 
   public int getId() {
     return this.id;
@@ -61,11 +65,11 @@ public class Time {
     this.jogadores = jogadores;
   }
 
-  public Set<Torcedor> getTorcedores() {
+  public List<Torcedor> getTorcedores() {
     return this.torcedores;
   }
 
-  public void setTorcedores(Set<Torcedor> torcedores) {
+  public void setTorcedores(List<Torcedor> torcedores) {
     this.torcedores = torcedores;
   }
 }

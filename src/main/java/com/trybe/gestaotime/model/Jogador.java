@@ -1,6 +1,5 @@
 package com.trybe.gestaotime.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,12 +25,8 @@ public class Jogador {
   private String nome;
   private String posicao;
 
-  @OneToOne(
-      mappedBy = "jogador",
-      cascade = CascadeType.ALL,
-      orphanRemoval = true,
-      fetch = FetchType.LAZY
-  )
+  @JoinColumn(name = "documento_id")
+  @OneToOne(fetch = FetchType.LAZY)
   private Documento documento;
 
   @ManyToOne

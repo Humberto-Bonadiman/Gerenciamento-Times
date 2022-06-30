@@ -23,7 +23,7 @@ public class Torcedor {
 
   private String nome;
 
-  @ManyToMany(mappedBy = "projetos")
+  @ManyToMany(mappedBy = "torcedores")
   private List<Time> times;
 
   /**
