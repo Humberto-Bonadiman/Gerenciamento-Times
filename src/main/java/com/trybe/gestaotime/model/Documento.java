@@ -18,7 +18,7 @@ public class Documento {
    */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private int id;
   
   private String cpf;
   private String numeroCateiraTrabalho;
@@ -36,11 +36,11 @@ public class Documento {
     this.jogador = jogador;
   }
 
-  public Long getId() {
+  public int getId() {
     return this.id;
   }
 
-  public void setId(Long id) {
+  public void setId(int id) {
     this.id = id;
   }
 
@@ -52,11 +52,11 @@ public class Documento {
     this.cpf = cpf;
   }
 
-  public String getNumeroCateiraTrabalho() {
+  public String getNumeroCarteiraTrabalho() {
     return this.numeroCateiraTrabalho;
   }
 
-  public void setNumeroCateiraTrabalho(String numeroCateiraTrabalho) {
+  public void setNumeroCarteiraTrabalho(String numeroCateiraTrabalho) {
     this.numeroCateiraTrabalho = numeroCateiraTrabalho;
   }
 

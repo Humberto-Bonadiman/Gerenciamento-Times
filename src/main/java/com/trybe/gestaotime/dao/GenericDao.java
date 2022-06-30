@@ -18,7 +18,7 @@ public abstract class GenericDao<T, I extends Serializable> {
   /**
    * save.
    */
-  public void save(T s) {
+  public void salvar(T s) {
     EntityManager em = emf.createEntityManager();
     em.getTransaction().begin();
     em.persist(s);
@@ -29,7 +29,7 @@ public abstract class GenericDao<T, I extends Serializable> {
   /**
    * update.
    */
-  void update(T s) {
+  public void editar(T s) {
     EntityManager em = emf.createEntityManager();
     em.getTransaction().begin();
     em.merge(s);
@@ -37,7 +37,7 @@ public abstract class GenericDao<T, I extends Serializable> {
     em.close();
   }
 
-  public abstract void delete(I id);
+  public abstract void deletar(I id);
 
-  public abstract List<T> list();
+  public abstract List<T> listar();
 }

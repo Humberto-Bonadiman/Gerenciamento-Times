@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 
 public class DocumentoDao extends GenericDao<Documento, Integer> {
   @Override
-  public void delete(Integer id) {
+  public void deletar(Integer id) {
     EntityManager em = emf.createEntityManager();
     Documento toBeDeleted = em.find(Documento.class, id);
     em.getTransaction().begin();
@@ -20,7 +20,7 @@ public class DocumentoDao extends GenericDao<Documento, Integer> {
   }
 
   @Override
-  public List<Documento> list() {
+  public List<Documento> listar() {
     EntityManager em = emf.createEntityManager();
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<Documento> cq = cb.createQuery(Documento.class);

@@ -24,7 +24,7 @@ public class Time {
    **/
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private int id;
 
   private String nome;
 
@@ -37,11 +37,11 @@ public class Time {
       inverseJoinColumns = {@JoinColumn(name = "torcedor_id")})
   private Set<Torcedor> torcedores;
 
-  public Long getId() {
+  public int getId() {
     return this.id;
   }
 
-  public void setId(Long id) {
+  public void setId(int id) {
     this.id = id;
   }
 

@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 
 public class TimeDao extends GenericDao<Time, Integer> {
   @Override
-  public void delete(Integer id) {
+  public void deletar(Integer id) {
     EntityManager em = emf.createEntityManager();
     Time toBeDeleted = em.find(Time.class, id);
     em.getTransaction().begin();
@@ -20,7 +20,7 @@ public class TimeDao extends GenericDao<Time, Integer> {
   }
 
   @Override
-  public List<Time> list() {
+  public List<Time> listar() {
     EntityManager em = emf.createEntityManager();
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<Time> cq = cb.createQuery(Time.class);

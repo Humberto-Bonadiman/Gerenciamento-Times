@@ -1,7 +1,7 @@
 package com.trybe.gestaotime.model;
 
-import java.util.Set;
-
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,18 +19,25 @@ public class Torcedor {
    **/
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private int id;
 
   private String nome;
 
   @ManyToMany(mappedBy = "projetos")
-  private Set<Time> times;
+  private List<Time> times;
 
-  public Long getId() {
+  /**
+   * Construtor entidade Torcedor.
+   */
+  public Torcedor() {
+    this.times = new ArrayList<Time>();
+  }
+
+  public int getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(int id) {
     this.id = id;
   }
 
@@ -42,11 +49,11 @@ public class Torcedor {
     this.nome = nome;
   }
 
-  public Set<Time> getTimes() {
+  public List<Time> getTimes() {
     return times;
   }
 
-  public void setTimes(Set<Time> times) {
+  public void setTimes(List<Time> times) {
     this.times = times;
   }
 }
