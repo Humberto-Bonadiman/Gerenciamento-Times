@@ -6,12 +6,4 @@ package com.trybe.gestaotime;
 
 public class Run {
 
-  /**
-   * Atributos.
-   */
-
-  /**
-   * Métodos.
-   */
-
 }

@@ -6,13 +6,4 @@ package com.trybe.gestaotime.dao;
 
 public class AplicacaoBD {
 
-  /**
-   * Atributos.
-   **/
-
-
-  /**
-   * Métodos.
-   **/
-
 }
